@@ -1,0 +1,12 @@
+7
+Dynamic ratio load balancing is great for application traffic that can vary greatly from user to user. For example, a 
+user for a payroll application might generate reports for 100 employees made up of big bulky PDFs, vs a user who is 
+just logging in to make a change to her account. If you based your traffic distribution decisions on a static load 
+balancing method, or even one of the simpler dynamic methods like least connections, you wouldn’t have a good way of 
+knowing one server is working 500% harder than the other pool members and is subsequently slower – unless you have a 
+way to measure server performance – let me introduce you to dynamic ratio load balancing…
+super...
+In order to use this load balancing method you will need to apply a performance monitor at the node level to the 
+members in the pool and ensure the server supports that data collection. Other than the SNMP performance monitor, 
+performance monitors require their specific plug-in file to be installed on the actual server.
+
