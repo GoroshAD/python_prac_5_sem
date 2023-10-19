@@ -1,0 +1,6 @@
+:cos y cos(2*y)
+cos 6
+:vaaaaau a b c d (a+b)**(c-d)
+vaaaaau 12 11 10 8
+cos 123
+quit "functions: {}, lines: {}"

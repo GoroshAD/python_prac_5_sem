@@ -1,0 +1,5 @@
+:three 3
+three
+:sub a b a-b
+sub 3 12345
+quit "{}:{}"
