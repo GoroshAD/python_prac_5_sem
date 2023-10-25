@@ -5,7 +5,9 @@ def slide(seq, n) :
     a = list(it.islice(seq, i, n))
     while (a) :
         i += 1
-        yield a
+        for j in a :
+            yield j
         a = list(it.islice(seq, i, n + i))
 
-print(*list(slide(range(5), 3)))
+import sys
+exec(sys.stdin.read())
