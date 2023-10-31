@@ -1,0 +1,8 @@
+r = Triangle((2, 1), (3, 3), (4, 1))
+s = Triangle((2, 5), (4, 5), (3, 3))
+t = Triangle((2, 3), (3, 5), (5, 0))
+o = Triangle((3, 3), (3, 4), (4, 2))
+print(*(f"{n}({bool(x)}):{round(abs(x), 3)}" for n, x in zip("rsto", (r, s, t, o))))
+print(f"{s < r=}, {o < t=}, {o < s=}, {t < s=}")
+print(f"{s in t=}, {o in t=}, {r in s=}")
+print(f"{r & t=}, {o & r=}, {s & r=}, {o & t=}")
