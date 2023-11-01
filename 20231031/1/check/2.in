@@ -1,0 +1,13 @@
+a, b = Omnibus(), Omnibus()
+del a.bread
+del a.k
+a.bread = a.bread = a.k = True
+b.bread = 9
+b.bread = b.k = False
+print(a.bread, a.k, b.bread, b.k)
+del a.k, b.bread
+print(a.bread, b.k)
+del a.k
+print(a.bread, b.k)
+a.k = 777
+print(a.bread, a.k, b.k) 

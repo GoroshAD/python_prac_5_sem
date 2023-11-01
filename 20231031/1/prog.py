@@ -3,29 +3,26 @@ class Omnibus :
 
     def __setattr__(self, name, mean) :
         if name in Omnibus.attr_counter.keys() :
-            Omnibus.attr_counter[name] += 1
+            Omnibus.attr_counter[name][0] += 1
+            if not self in Omnibus.attr_counter[name][1] :
+                Omnibus.attr_counter[name][1].append(self)
         else :
-            Omnibus.attr_counter[name] = 1
-        #self.__dict__[name] = Omnibus.attr_counter[name]
+            Omnibus.attr_counter[name] = [0,[]]
+            Omnibus.attr_counter[name][0] = 1
+            Omnibus.attr_counter[name][1] = [self]
         pass
     
     def __getattr__(self, name) :
-        return Omnibus.attr_counter[name]
+        if self in Omnibus.attr_counter[name][1] :
+            return Omnibus.attr_counter[name][0]
+        return
 
     def __delattr__(self, name) :
-        if name in Omnibus.attr_counter.keys() :
-            Omnibus.attr_counter[name] -= 1
+        if name in Omnibus.attr_counter.keys() and self in Omnibus.attr_counter[name][1]:
+            Omnibus.attr_counter[name][0] -= 1
+            Omnibus.attr_counter[name][1].remove(self)
+        
         pass
 
-a, b, c = Omnibus(), Omnibus(), Omnibus()
-del a.random
-a.i = a.j = a.k = True
-b.j = b.k = b.n = False
-c.k = c.n = c.m = hex
-print(a.i, a.j, a.k, b.j, b.k, b.n, c.k, c.n, c.m)
-del a.k, b.n, c.m
-print(a.i, a.j, b.j, b.k, c.k, c.n)
-del a.k, c.m
-print(a.i, a.j, b.j, b.k, c.k, c.n)
-a.k = b.i = c.m = 777
-print(a.i, a.j, a.k, b.j, b.k, c.k, c.n, c.m) 
+import sys
+exec(sys.stdin.read())

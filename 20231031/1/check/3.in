@@ -1,0 +1,12 @@
+a, b, c = Omnibus(), Omnibus(), Omnibus()
+del a.h
+a.h = "apple"
+b.h = "pineapple"
+c.h = "banana"
+a.s = "orange"
+c.s = "coconut"
+print(a.h, a.s, b.h, c.h, c.s)
+del a.h, c.s
+print(a.s, b.h, c.h)
+del a.h, c.h
+print(a.s, b.h)
