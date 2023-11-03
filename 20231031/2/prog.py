@@ -1,4 +1,11 @@
+from itertools import permutations
+
 class Triangle :
+    def side_func(self, x1, x2, x3) :
+        k = (x2[1] - x1[1]) / (x2[0] - x1[0]) if x2[0] != x1[0] else 0
+        b = x2[1] - x2[0] * k
+        return 0 if (x3[1] == x3[0] * k + b and x3[0] <= max(x2[0], x1[0]) and x3[0] >= min(x2[0], x1[0])) else 1 if x3[1] > x3[0] * k + b else -1
+
     def inside(self, z) :
         ao, bo, co = (- self.x[0] + z[0], z[1] - self.x[1]), (z[0] - self.y[0], z[1] - self.y[1]), (z[0] - self.z[0], z[1] - self.z[1])
         oa, ob, oc = (-ao[0], -ao[1]), (-bo[0], -bo[1]), (-co[0], -co[1])
@@ -35,17 +42,14 @@ class Triangle :
     def __and__(self, other) :
         if abs(self) == 0 or abs(other) == 0 :
             return False
-        if any((self.x == other.x, self.y == other.y, self.z == other.z, \
-                self.x == other.y, self.y == other.z, self.z == other.x, \
-                self.x == other.z, self.y == other.x, self.z == other.y)) :
-            return True
-        return any((any((self.inside(other.x) != self.inside(other.y) == self.inside(other.z), \
-                   self.inside(other.x) == self.inside(other.y) != self.inside(other.z), \
-                   self.inside(other.x) == self.inside(other.z) != self.inside(other.y))), \
-                   any((other.inside(self.x) != other.inside(self.y) == other.inside(self.z), \
-                   other.inside(self.x) == other.inside(self.y) != other.inside(self.z), \
-                   other.inside(self.x) == other.inside(self.z) != other.inside(self.y)))))
-            
+        for i in permutations((self.x, self.y, self.z), 2) :
+            for j in permutations((other.x, other.y, other.z), 2) :
+                a, b, c, d = self.side_func(*i, j[0]), self.side_func(*i, j[1]), self.side_func(*j, i[0]), self.side_func(*j, i[1])
+                if a * b * c * d == 0 :
+                    return True
+                if a * b < 0 and c * d < 0:
+                    return True
+        return False       
         
 import sys
 exec(sys.stdin.read())
