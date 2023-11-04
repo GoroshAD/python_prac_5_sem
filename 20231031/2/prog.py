@@ -9,8 +9,8 @@ class Triangle :
     def inside(self, z) :
         ao, bo, co = (- self.x[0] + z[0], z[1] - self.x[1]), (z[0] - self.y[0], z[1] - self.y[1]), (z[0] - self.z[0], z[1] - self.z[1])
         oa, ob, oc = (-ao[0], -ao[1]), (-bo[0], -bo[1]), (-co[0], -co[1])
-        return all((ao[0] * ob[1] - ao[1] * ob[0] > 0, bo[0] * oc[1] - bo[1] * oc[0] > 0, co[0] * oa[1] - co[1] * oa[0] > 0)) or \
-                all((ao[0] * ob[1] - ao[1] * ob[0] < 0, bo[0] * oc[1] - bo[1] * oc[0] < 0, co[0] * oa[1] - co[1] * oa[0] < 0))
+        return all((ao[0] * ob[1] - ao[1] * ob[0] >= 0, bo[0] * oc[1] - bo[1] * oc[0] >= 0, co[0] * oa[1] - co[1] * oa[0] >= 0)) or \
+                all((ao[0] * ob[1] - ao[1] * ob[0] <= 0, bo[0] * oc[1] - bo[1] * oc[0] <= 0, co[0] * oa[1] - co[1] * oa[0] <= 0))
 
 
     def __init__(self, a, b, c) :
@@ -24,7 +24,7 @@ class Triangle :
         if not self :
             return 0
         self.p = (self.a + self.b + self.c) / 2.0
-        return (self.p * (self.p - self.a) * (self.p - self.b) * (self.p - self.c))**(0.5)
+        return round((self.p * (self.p - self.a) * (self.p - self.b) * (self.p - self.c))**(0.5), 3)
     
     def __bool__(self) :
         return all((self.a + self.b > self.c, self.a + self.c > self.b, self.b + self.c > self.a))
