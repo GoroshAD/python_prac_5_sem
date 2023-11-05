@@ -42,6 +42,8 @@ class Triangle :
     def __and__(self, other) :
         if abs(self) == 0 or abs(other) == 0 :
             return False
+        if self in other or other in self :
+            return True
         for i in permutations((self.x, self.y, self.z), 2) :
             for j in permutations((other.x, other.y, other.z), 2) :
                 a, b, c, d = self.side_func(*i, j[0]), self.side_func(*i, j[1]), self.side_func(*j, i[0]), self.side_func(*j, i[1])
