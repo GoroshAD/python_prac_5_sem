@@ -1,5 +1,0 @@
-A = DefCounter("Theese tests are simillar to be honest(", missing = -100)
-print(A)
-A["P"] += 95
-print(A["O"], A["P"], abs(A), A.total())
-print(A)
