@@ -1,0 +1,5 @@
+a, b = DivStr("abracadabra"), DivStr("buldoser")
+print(a + b)
+print(a % 4, b % 5)
+print(* a % 10 // 3, * b % 6 // 2)
+print(* a[1:7] // 3)
