@@ -1,0 +1,20 @@
+from timeit import timeit
+def alpha():
+    alp = Alpha()
+    for i in range(ord('a'), ord('z') + 1):
+       setattr(alp, chr(i), 10000)
+    res = ""
+    for i in range(10000):
+        res += str(alp)
+
+def alphaq():
+    alpq = AlphaQ()
+    for i in range(ord('a'), ord('z') + 1):
+    	setattr(alpq, chr(i), 10000)
+    res = ""
+    for i in range(10000):
+    	res += str(alpq)
+for i in range(10):
+    al_fin = timeit(stmt='alpha()', number=20, globals=globals())
+    alq_fin = timeit(stmt='alphaq()', number=20, globals=globals())
+    print(al_fin > alq_fin)

@@ -1,0 +1,47 @@
+try:
+    alp = Alpha(a=1, ad=3, d=9)
+    print("Error")
+except AttributeError:
+    print(True)
+except:
+    print(False)
+try:
+    alpq = AlphaQ(a=1, ad=3, d=9)
+    print("Error")
+except AttributeError:
+    print(True)
+except:
+    print(False)
+
+alp = Alpha(a=1)
+alpq = AlphaQ(a=1)
+alp.e, alpq.r = 3, 4
+try:
+    alp.re = 9
+    print(alp)
+except AttributeError:
+    print(True)
+    print(alp)
+except:
+    print(False)
+try:
+    alpq.er = 9
+    print(alpq)
+except AttributeError:
+    print(True)
+    print(alpq)
+except:
+    print(False)
+
+try:
+    print(alp.s)
+except AttributeError:
+    print(True)
+except:
+    print(False)
+try:
+    print(alpq.w)
+except AttributeError:
+    print(True)
+except:
+    print(False)
