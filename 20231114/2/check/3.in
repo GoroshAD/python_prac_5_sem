@@ -1,0 +1,8 @@
+class C:
+  num = Num()
+print(C().num)
+c, d = C(), C()
+c.num = 2.0
+d.num = "why"
+print(c.num - d.num)
+

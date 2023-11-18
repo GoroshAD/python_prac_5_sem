@@ -1,0 +1,9 @@
+@objcount
+class C:
+    pass
+
+def func():
+    arr = [C() for i in range(1000)]
+    print(C.counter)
+func()
+print(C.counter)
