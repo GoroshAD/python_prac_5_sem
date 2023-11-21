@@ -1,0 +1,7 @@
+b = "вопрос".encode("CP1251")
+print(b.decode("KOI8-R"))
+b = "бМХЛЮМХЕ".encode("KOI8-R")
+print(b.decode("CP1251"))
+b = "ОХРЮМХЕ".encode("KOI8-R")
+print(b.decode("CP1251"))
+print("вопрос не читал".encode("CP1251").decode("KOI8-R"))
