@@ -1,0 +1,11 @@
+class C(metaclass=dump):
+    def __init__(self, val):
+        self.val = val
+
+    def add(self, other, another=None):
+        return self.val + other + (another or self.val)
+
+for i in range(100):
+    c = C(i)
+    print(c.add(100 - i))
+    print(c.add(100 - i, another=100))

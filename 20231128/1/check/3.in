@@ -1,0 +1,15 @@
+class C(metaclass=dump):
+    def __init__(self, val):
+        self.val = val
+
+    def add(self, other, another=None):
+        return self.val + other + (another or self.val)
+    def sub(self, other, another=None):
+        return self.val - other - (another or self.val)
+
+for i in range(10000):
+    a,b,c = C(i), C(i*2), C(i*3)
+    print(c.add(9), b.add(3), a.add(1))
+    print(c.add(9, another=64))
+    print(c.add(3, another=256))
+    print(c.add(1, another=1024))
