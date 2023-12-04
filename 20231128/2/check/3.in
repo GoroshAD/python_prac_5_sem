@@ -2,6 +2,7 @@ here is an error
 hehe
 store 1234567 t
 store 18 8
+store 5 5
 out 8
 out t
 add t 8 t

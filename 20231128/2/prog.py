@@ -123,24 +123,21 @@ def interpretator_func(fil):
                 if s[1] in vals_dict.keys():
                     print(vals_dict[s[1]])
                 else:
-                    try:
-                        print(float(eval(s[2])))
-                    except:
-                        print(0)
+                    print(0)
             case 'div':
                 tmp1, tmp2 = 0, 0
                 try:
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 try:
@@ -153,14 +150,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 vals_dict[s[3]] = tmp1 * tmp2
@@ -170,14 +167,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 vals_dict[s[3]] = tmp1 + tmp2
@@ -187,14 +184,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 vals_dict[s[3]] = tmp1 - tmp2
@@ -204,14 +201,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 == tmp2:
@@ -224,14 +221,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 != tmp2:
@@ -244,14 +241,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 > tmp2:
@@ -264,14 +261,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 >= tmp2:
@@ -284,14 +281,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 < tmp2:
@@ -304,14 +301,14 @@ def interpretator_func(fil):
                     if s[1] in vals_dict.keys():
                         tmp1 = vals_dict[s[1]]
                     else:
-                        tmp1 = float(eval(s[1]))
+                        tmp1 = 0
                 except:
                     tmp1 = 0
                 try:
                     if s[2] in vals_dict.keys():
                         tmp2 = vals_dict[s[2]]
                     else:
-                        tmp2 = float(eval(s[2]))
+                        tmp2 = 0
                 except:
                     tmp2 = 0
                 if tmp1 <= tmp2:

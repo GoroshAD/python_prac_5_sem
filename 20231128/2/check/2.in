@@ -4,20 +4,25 @@ store 0 counter
 store 4 const1
 store 1 const2
 store 0 pi
-iflt -1 0 loop
+store -1 const_minus_one
+store 1 const_one
+store 2 const_two
+store 100 const_hundred
+
+iflt const_minus_one 0 loop
 out 1
-less: sub const2 2 const2
-iflt -1 0 continue
+less: sub const2 const_two const2
+iflt const_minus_one 0 continue
 
 loop: 
 div const1 const2 tmp
 add pi tmp pi
-mul -1 const2 const2
+mul const_minus_one const2 const2
 iflt const2 0 less
-add const2 2 const2
+add const2 const_two const2
 
-continue: add counter 1 counter
-iflt counter 100 loop
+continue: add counter const_one counter
+iflt counter const_hundred loop
 out pi
 stop
 out pi
