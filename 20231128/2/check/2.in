@@ -1,0 +1,23 @@
+Программа по подсчету числа пи
+
+store 0 counter
+store 4 const1
+store 1 const2
+store 0 pi
+iflt -1 0 loop
+out 1
+less: sub const2 2 const2
+iflt -1 0 continue
+
+loop: 
+div const1 const2 tmp
+add pi tmp pi
+mul -1 const2 const2
+iflt const2 0 less
+add const2 2 const2
+
+continue: add counter 1 counter
+iflt counter 100 loop
+out pi
+stop
+out pi

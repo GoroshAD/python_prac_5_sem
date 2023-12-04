@@ -1,0 +1,9 @@
+here is an error
+hehe
+store 1234567 t
+store 18 8
+out 8
+out t
+add t 8 t
+out t
+ifle 5 5 loop
