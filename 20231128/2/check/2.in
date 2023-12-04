@@ -7,7 +7,7 @@ store 0 pi
 store -1 const_minus_one
 store 1 const_one
 store 2 const_two
-store 100 const_hundred
+store 1000000 const_hundred
 
 iflt const_minus_one 0 loop
 out 1
