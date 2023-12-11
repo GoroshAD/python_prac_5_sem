@@ -4,29 +4,34 @@ event = asyncio.Event()
 
 async def writer(queue, delay):
     counter = 0
-    await asyncio.sleep(delay)
     while True:
+        await asyncio.sleep(delay)
         await queue.put("{}_{}".format(counter, delay))
         counter += 1
         if event.is_set():
             break
-        await asyncio.sleep(delay)
 
 async def stacker(queue, stack):
     while True:
-        item = await queue.get()
-        await stack.put(item)
+        await asyncio.sleep(0)
+        try:
+            item = queue.get_nowait()
+            await stack.put(item)
+        except:
+            pass
         if event.is_set():
             break
 
 async def reader(stack, count, delay):
-    await asyncio.sleep(delay)
     i = 0
     while i < count:
-        item = await stack.get()
-        print(item)
-        i += 1
         await asyncio.sleep(delay)
+        try:
+            item = stack.get_nowait()
+            print(item)
+            i += 1
+        except:
+            continue
     event.set()
 
 async def main(delay1, delay2, delay3, count):
