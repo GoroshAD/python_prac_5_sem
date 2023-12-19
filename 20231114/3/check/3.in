@@ -14,7 +14,7 @@ def alphaq():
     res = ""
     for i in range(10000):
     	res += str(alpq)
-for i in range(10):
-    al_fin = timeit(stmt='alpha()', number=20, globals=globals())
-    alq_fin = timeit(stmt='alphaq()', number=20, globals=globals())
-    print(al_fin > alq_fin)
+
+al_fin = timeit(stmt='alpha()', number=20, globals=globals())
+alq_fin = timeit(stmt='alphaq()', number=20, globals=globals())
+print(al_fin > alq_fin)
