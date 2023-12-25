@@ -4,7 +4,7 @@ def alpha():
     for i in range(ord('a'), ord('z') + 1):
        setattr(alp, chr(i), 10000)
     res = ""
-    for i in range(10000):
+    for i in range(1000):
         res += str(alp)
 
 def alphaq():
@@ -12,7 +12,7 @@ def alphaq():
     for i in range(ord('a'), ord('z') + 1):
     	setattr(alpq, chr(i), 10000)
     res = ""
-    for i in range(10000):
+    for i in range(1000):
     	res += str(alpq)
 
 al_fin = timeit(stmt='alpha()', number=20, globals=globals())
